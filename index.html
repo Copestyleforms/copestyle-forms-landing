@@ -55,9 +55,10 @@
         <h1 class="hero__title">El reporte de campo que <em>llega solo</em> a quien lo necesita.</h1>
         <p class="hero__lead">Copestyle Forms reemplaza la planilla de papel por un formulario que el residente, el operario o el supervisor llenan desde el celular — con fotos, firma digital y entrega automática del PDF por WhatsApp.</p>
 
-        <form class="hero__form demo-form" id="hero-form" novalidate>
+        <form class="hero__form demo-form" id="hero-form" data-source="hero" novalidate>
           <label class="visually-hidden" for="hero-email">Correo de trabajo</label>
           <input class="field" type="email" id="hero-email" name="email" placeholder="tu correo de trabajo" autocomplete="email" required>
+          <input type="text" name="empresa" class="field-trap" tabindex="-1" autocomplete="off" aria-hidden="true">
           <button class="btn btn--primary" type="submit">Solicitar demo</button>
         </form>
         <p class="hero__meta">Implementación guiada · Sin permanencia · Soporte incluido</p>
@@ -340,9 +341,10 @@
           <span class="kicker">✉ Guía gratuita</span>
           <h2 class="section__title">Digitaliza los reportes de campo de tu operación en <em>30 días</em></h2>
           <p class="section__lead">Una guía práctica para pasar del papel al formulario digital sin traumatismos: qué formularios priorizar, cómo capacitar al equipo de campo y cómo medir el ahorro de tiempo administrativo desde el primer mes.</p>
-          <form class="lead-magnet__form demo-form" id="guide-form" data-toast="guia" novalidate>
+          <form class="lead-magnet__form demo-form" id="guide-form" data-toast="guia" data-source="guia" novalidate>
             <label class="visually-hidden" for="guide-email">Correo para recibir la guía</label>
             <input class="field" type="email" id="guide-email" name="email" placeholder="tu correo" autocomplete="email" required>
+            <input type="text" name="empresa" class="field-trap" tabindex="-1" autocomplete="off" aria-hidden="true">
             <button class="btn btn--primary" type="submit">Descargar guía</button>
           </form>
         </div>
@@ -558,9 +560,10 @@
         <span class="kicker">◷ Siguiente paso</span>
         <h2 class="section__title">Empieza a <em>digitalizar</em> tus reportes de campo</h2>
         <p class="section__lead section__lead--center">Agenda una demo de 20 minutos y te mostramos cómo se vería Copestyle Forms en tu copropiedad o en tu obra.</p>
-        <form class="cta-final__form demo-form" id="cta-form" novalidate>
+        <form class="cta-final__form demo-form" id="cta-form" data-source="cta" novalidate>
           <label class="visually-hidden" for="cta-email">Correo de trabajo</label>
           <input class="field" type="email" id="cta-email" name="email" placeholder="tu correo de trabajo" autocomplete="email" required>
+          <input type="text" name="empresa" class="field-trap" tabindex="-1" autocomplete="off" aria-hidden="true">
           <button class="btn btn--primary" type="submit">Solicitar demo</button>
         </form>
       </div>
