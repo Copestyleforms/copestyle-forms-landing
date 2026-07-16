@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  var BACKEND_URL = 'http://localhost:3000';
+  var BACKEND_URL = 'https://copestyle-leads-backend.up.railway.app';
 
   var toastEl = document.getElementById('toast');
   var toastTimer = null;
