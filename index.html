@@ -56,8 +56,20 @@
         <p class="hero__lead">Copestyle Forms reemplaza la planilla de papel por un formulario que el residente, el operario o el supervisor llenan desde el celular — con fotos, firma digital y entrega automática del PDF por WhatsApp.</p>
 
         <form class="hero__form demo-form" id="hero-form" data-source="hero" novalidate>
+          <div class="contact-toggle" role="radiogroup" aria-label="Cómo prefieres que te contactemos">
+            <label class="contact-toggle__option">
+              <input type="radio" name="contactMethod" value="email" checked>
+              <span>✉ Correo</span>
+            </label>
+            <label class="contact-toggle__option">
+              <input type="radio" name="contactMethod" value="whatsapp">
+              <span>☎ WhatsApp</span>
+            </label>
+          </div>
           <label class="visually-hidden" for="hero-email">Correo de trabajo</label>
           <input class="field" type="email" id="hero-email" name="email" placeholder="tu correo de trabajo" autocomplete="email" required>
+          <label class="visually-hidden" for="hero-phone">Número de WhatsApp</label>
+          <input class="field is-hidden" type="tel" id="hero-phone" name="phone" placeholder="tu número de WhatsApp" autocomplete="tel">
           <input type="text" name="empresa" class="field-trap" tabindex="-1" autocomplete="off" aria-hidden="true">
           <button class="btn btn--primary" type="submit">Solicitar demo</button>
         </form>
@@ -561,8 +573,20 @@
         <h2 class="section__title">Empieza a <em>digitalizar</em> tus reportes de campo</h2>
         <p class="section__lead section__lead--center">Agenda una demo de 20 minutos y te mostramos cómo se vería Copestyle Forms en tu copropiedad o en tu obra.</p>
         <form class="cta-final__form demo-form" id="cta-form" data-source="cta" novalidate>
+          <div class="contact-toggle" role="radiogroup" aria-label="Cómo prefieres que te contactemos">
+            <label class="contact-toggle__option">
+              <input type="radio" name="contactMethod" value="email" checked>
+              <span>✉ Correo</span>
+            </label>
+            <label class="contact-toggle__option">
+              <input type="radio" name="contactMethod" value="whatsapp">
+              <span>☎ WhatsApp</span>
+            </label>
+          </div>
           <label class="visually-hidden" for="cta-email">Correo de trabajo</label>
           <input class="field" type="email" id="cta-email" name="email" placeholder="tu correo de trabajo" autocomplete="email" required>
+          <label class="visually-hidden" for="cta-phone">Número de WhatsApp</label>
+          <input class="field is-hidden" type="tel" id="cta-phone" name="phone" placeholder="tu número de WhatsApp" autocomplete="tel">
           <input type="text" name="empresa" class="field-trap" tabindex="-1" autocomplete="off" aria-hidden="true">
           <button class="btn btn--primary" type="submit">Solicitar demo</button>
         </form>
