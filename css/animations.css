@@ -1,0 +1,225 @@
+/* =========================================================
+   COPESTYLE FORMS — animations.css
+   Keyframes, scroll-reveal, transiciones, estados de hover
+   ========================================================= */
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes badge-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(77, 184, 255, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(77, 184, 255, 0);
+  }
+}
+
+@keyframes bounce-down {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(8px);
+    opacity: 1;
+  }
+}
+
+@keyframes line-grow {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes scan-sweep {
+  0% {
+    top: 8%;
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    top: 92%;
+    opacity: 0;
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ---------- Entrada del hero ---------- */
+.hero__badge {
+  animation: fade-up var(--dur-slow) var(--ease) both, badge-pulse 3.5s ease-in-out 1.2s infinite;
+}
+
+.hero__title {
+  animation: fade-up var(--dur-slow) var(--ease) 0.1s both;
+}
+
+.hero__lead {
+  animation: fade-up var(--dur-slow) var(--ease) 0.22s both;
+}
+
+.hero__form {
+  animation: fade-up var(--dur-slow) var(--ease) 0.34s both;
+}
+
+.hero__meta {
+  animation: fade-up var(--dur-slow) var(--ease) 0.42s both;
+}
+
+.hero__stats {
+  animation: fade-up var(--dur-slow) var(--ease) 0.5s both;
+}
+
+.hero__halo {
+  animation: fade-up var(--dur-slow) var(--ease) 0.4s both;
+}
+
+.hero__halo-tag {
+  opacity: 0;
+  animation: fade-up var(--dur-slow) var(--ease) forwards;
+}
+
+.hero__halo-tag--1 {
+  animation-delay: 0.75s;
+}
+
+.hero__halo-tag--2 {
+  animation-delay: 0.95s;
+}
+
+.hero__halo-tag--3 {
+  animation-delay: 1.15s;
+}
+
+.scroll-hint {
+  animation: fade-up var(--dur-slow) var(--ease) 0.7s both;
+}
+
+.scroll-hint span:last-child {
+  animation: bounce-down 2.2s ease-in-out infinite;
+}
+
+/* ---------- Scroll-reveal genérico ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-stagger.is-visible .feature-card,
+.reveal-stagger.is-visible .sector-card,
+.reveal-stagger.is-visible .template-item,
+.reveal-stagger.is-visible .testimonial-card,
+.reveal-stagger.is-visible .price-card {
+  animation: fade-up 0.7s var(--ease) both;
+}
+
+.reveal-stagger .feature-card:nth-child(1),
+.reveal-stagger .sector-card:nth-child(1),
+.reveal-stagger .template-item:nth-child(1),
+.reveal-stagger .testimonial-card:nth-child(1),
+.reveal-stagger .price-card:nth-child(1) {
+  animation-delay: 0.05s;
+}
+.reveal-stagger .feature-card:nth-child(2),
+.reveal-stagger .sector-card:nth-child(2),
+.reveal-stagger .template-item:nth-child(2),
+.reveal-stagger .testimonial-card:nth-child(2),
+.reveal-stagger .price-card:nth-child(2) {
+  animation-delay: 0.14s;
+}
+.reveal-stagger .feature-card:nth-child(3),
+.reveal-stagger .template-item:nth-child(3),
+.reveal-stagger .testimonial-card:nth-child(3),
+.reveal-stagger .price-card:nth-child(3) {
+  animation-delay: 0.23s;
+}
+.reveal-stagger .feature-card:nth-child(4),
+.reveal-stagger .template-item:nth-child(4) {
+  animation-delay: 0.32s;
+}
+.reveal-stagger .feature-card:nth-child(5),
+.reveal-stagger .template-item:nth-child(5) {
+  animation-delay: 0.41s;
+}
+.reveal-stagger .feature-card:nth-child(6),
+.reveal-stagger .template-item:nth-child(6) {
+  animation-delay: 0.5s;
+}
+
+.section__header::after {
+  animation: line-grow 0.9s var(--ease) both;
+  transform-origin: left;
+}
+
+.section__header--center::after {
+  transform-origin: center;
+}
+
+/* ---------- Plan destacado: respiro de brillo ---------- */
+@keyframes price-glow {
+  0%,
+  100% {
+    box-shadow: var(--shadow-lift);
+  }
+  50% {
+    box-shadow: 0 24px 60px -18px rgba(0, 0, 0, 0.8), var(--glow-md);
+  }
+}
+
+.price-card--featured {
+  animation: price-glow 3.6s ease-in-out infinite;
+}
+
+/* ---------- Avatar de testimonio: anillo giratorio ---------- */
+.testimonial-card__avatar::before {
+  content: '';
+  position: absolute;
+  inset: -5px;
+  border: 1px dashed var(--border-electric);
+  border-radius: 50%;
+  animation: spin-slow 10s linear infinite;
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,164 @@
+/* =========================================================
+   COPESTYLE FORMS — reset.css
+   Normalización + variables globales de marca (:root)
+   ========================================================= */
+
+:root {
+  /* ---------- Paleta ---------- */
+  --void: #05080f;
+  --void-soft: #080d18;
+  --void-deep: #030509;
+
+  --ice: #e8eef5;
+  --ice-dim: #c7d2de;
+
+  --electric: #4db8ff;
+  --electric-bright: #7fd0ff;
+  --electric-dim: rgba(77, 184, 255, 0.16);
+  --electric-line: rgba(77, 184, 255, 0.4);
+
+  --silver: #b8c6d4;
+  --steel: #6d7f92;
+  --steel-dim: #4a5a6b;
+
+  --surface: rgba(12, 20, 34, 0.6);
+  --surface-strong: rgba(16, 27, 44, 0.86);
+  --surface-solid: #0c1422;
+
+  --border: rgba(184, 198, 212, 0.14);
+  --border-strong: rgba(184, 198, 212, 0.26);
+  --border-electric: rgba(77, 184, 255, 0.38);
+
+  /* ---------- Sombras / glow ---------- */
+  --glow-sm: 0 0 16px rgba(77, 184, 255, 0.25);
+  --glow-md: 0 0 28px rgba(77, 184, 255, 0.35);
+  --glow-lg: 0 0 48px rgba(77, 184, 255, 0.45);
+  --shadow-card: 0 20px 50px -20px rgba(0, 0, 0, 0.7);
+  --shadow-lift: 0 24px 60px -18px rgba(0, 0, 0, 0.8), var(--glow-sm);
+
+  /* ---------- Tipografía ---------- */
+  --font-display: 'Russo One', sans-serif;
+  --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+
+  /* ---------- Forma ---------- */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+  --container: 1220px;
+  --gutter: clamp(1.25rem, 4vw, 3rem);
+
+  /* ---------- Movimiento ---------- */
+  --ease: cubic-bezier(0.2, 0.9, 0.3, 1);
+  --dur-fast: 0.22s;
+  --dur-med: 0.45s;
+  --dur-slow: 0.9s;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--void);
+  color: var(--ice);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img,
+picture,
+svg,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: 0.01em;
+}
+
+em {
+  font-style: normal;
+  color: var(--electric-bright);
+  text-shadow: 0 0 18px rgba(127, 208, 255, 0.55);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+::selection {
+  background: var(--electric);
+  color: var(--void-deep);
+}
+
+:focus-visible {
+  outline: 2px solid var(--electric);
+  outline-offset: 3px;
+}
+
+/* Scrollbar (WebKit) */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--void);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--steel-dim);
+  border-radius: var(--radius-md);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--steel);
+}

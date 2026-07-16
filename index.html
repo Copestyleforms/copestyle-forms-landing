@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Copestyle Forms — Reportes de campo sin papel</title>
+<meta name="description" content="Copestyle Forms digitaliza los reportes de campo de copropiedades y obras civiles: formularios desde el celular, firma digital y entrega automática por WhatsApp." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+<div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
+<div id="scene-container" aria-hidden="true">
+  <canvas id="webgl"></canvas>
+</div>
+<div class="vignette" aria-hidden="true"></div>
+<div class="blueprint-grid" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+
+<nav class="nav">
+  <div class="container nav__inner">
+    <div class="nav__brand">
+      <img class="nav__logo" src="assets/LogoCopestyle.png" alt="Copestyle Forms">
+      <span class="nav__wordmark">Copestyle <span>Forms</span></span>
+    </div>
+    <ul class="nav__links">
+      <li><a href="#funciones">Funciones</a></li>
+      <li><a href="#sectores">Sectores</a></li>
+      <li><a href="#plantillas">Plantillas</a></li>
+      <li><a href="#precios">Precios</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <div class="nav__actions">
+      <a href="#hero-form" class="btn btn--primary btn--sm">Solicitar demo</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="container hero__grid">
+      <div class="hero__content">
+        <span class="badge hero__badge">◷ Copropiedades · Obras civiles · Cero papel</span>
+        <h1 class="hero__title">El reporte de campo que <em>llega solo</em> a quien lo necesita.</h1>
+        <p class="hero__lead">Copestyle Forms reemplaza la planilla de papel por un formulario que el residente, el operario o el supervisor llenan desde el celular — con fotos, firma digital y entrega automática del PDF por WhatsApp.</p>
+
+        <form class="hero__form demo-form" id="hero-form" novalidate>
+          <label class="visually-hidden" for="hero-email">Correo de trabajo</label>
+          <input class="field" type="email" id="hero-email" name="email" placeholder="tu correo de trabajo" autocomplete="email" required>
+          <button class="btn btn--primary" type="submit">Solicitar demo</button>
+        </form>
+        <p class="hero__meta">Implementación guiada · Sin permanencia · Soporte incluido</p>
+
+        <div class="hero__stats">
+          <div class="stat">
+            <div class="stat__value">12.000+</div>
+            <div class="stat__label">Reportes generados</div>
+          </div>
+          <div class="stat">
+            <div class="stat__value">50+</div>
+            <div class="stat__label">Operaciones activas</div>
+          </div>
+          <div class="stat">
+            <div class="stat__value">70%</div>
+            <div class="stat__label">Menos tiempo administrativo</div>
+          </div>
+          <div class="stat">
+            <div class="stat__value">4,9/5</div>
+            <div class="stat__label">Satisfacción</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__visual" aria-hidden="true">
+        <div class="hero__halo">
+          <span class="hero__halo-ring hero__halo-ring--1"></span>
+          <span class="hero__halo-ring hero__halo-ring--2"></span>
+          <span class="hero__halo-ring hero__halo-ring--3"></span>
+          <span class="hero__halo-spoke hero__halo-spoke--1"></span>
+          <span class="hero__halo-spoke hero__halo-spoke--2"></span>
+          <span class="hero__halo-spoke hero__halo-spoke--3"></span>
+          <span class="hero__halo-spoke hero__halo-spoke--4"></span>
+          <span class="hero__halo-spoke hero__halo-spoke--5"></span>
+          <span class="hero__halo-spoke hero__halo-spoke--6"></span>
+          <span class="hero__halo-core">⧉</span>
+          <span class="badge hero__halo-tag hero__halo-tag--1">✍ Firma digital</span>
+          <span class="badge hero__halo-tag hero__halo-tag--2">✉ PDF por WhatsApp</span>
+          <span class="badge hero__halo-tag hero__halo-tag--3">◷ Entrega en segundos</span>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-hint">
+      <span>Desplázate</span>
+      <span aria-hidden="true">⌄</span>
+    </div>
+  </section>
+
+  <!-- FUNCIONES -->
+  <section class="section" id="funciones">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="kicker">◷ Funciones</span>
+        <h2 class="section__title">Todo lo que necesitas para <em>digitalizar</em> el reporte de campo</h2>
+      </div>
+
+      <div class="features-grid reveal reveal-stagger">
+        <article class="panel feature-card">
+          <div class="feature-card__icon" aria-hidden="true">☑</div>
+          <h3 class="feature-card__title">Formularios a la medida</h3>
+          <p class="feature-card__desc">Diseñamos los campos exactos que tu operación necesita: listas de chequeo, campos numéricos, firmas y fotos, listos para llenarse desde cualquier celular.</p>
+          <p class="feature-card__meta">Formularios · Móvil</p>
+        </article>
+
+        <article class="panel feature-card">
+          <div class="feature-card__icon" aria-hidden="true">✎</div>
+          <h3 class="feature-card__title">Registro con evidencia fotográfica</h3>
+          <p class="feature-card__desc">Cada reporte se acompaña de fotos georreferenciadas, tomadas en el momento y adjuntas automáticamente al documento final.</p>
+          <p class="feature-card__meta">Evidencia · Geolocalización</p>
+        </article>
+
+        <article class="panel feature-card">
+          <div class="feature-card__icon" aria-hidden="true">✍</div>
+          <h3 class="feature-card__title">Firma digital en pantalla</h3>
+          <p class="feature-card__desc">El residente, el operario o el supervisor firman directamente en el celular. La firma queda embebida en el PDF, como respaldo documental de lo reportado.</p>
+          <p class="feature-card__meta">Firmas · Legal</p>
+        </article>
+
+        <article class="panel feature-card">
+          <div class="feature-card__icon" aria-hidden="true">⧉</div>
+          <h3 class="feature-card__title">Generación automática de PDF</h3>
+          <p class="feature-card__desc">Al cerrar el formulario, el sistema arma el documento con el membrete de tu operación, listo para archivo o auditoría.</p>
+          <p class="feature-card__meta">Documentos · Automático</p>
+        </article>
+
+        <article class="panel feature-card">
+          <div class="feature-card__icon" aria-hidden="true">✉</div>
+          <h3 class="feature-card__title">Entrega inmediata por WhatsApp</h3>
+          <p class="feature-card__desc">El PDF llega al administrador, al director de obra o a quien tú definas, en segundos, sin pasar por correo ni por carpetas compartidas.</p>
+          <p class="feature-card__meta">WhatsApp · Tiempo real</p>
+        </article>
+
+        <article class="panel feature-card">
+          <div class="feature-card__icon" aria-hidden="true">◷</div>
+          <h3 class="feature-card__title">Historial y trazabilidad</h3>
+          <p class="feature-card__desc">Cada reporte queda fechado, firmado y archivado. Consulta cualquier inspección o bitácora de meses atrás en dos pasos.</p>
+          <p class="feature-card__meta">Historial · Auditoría</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTORES -->
+  <section class="section" id="sectores">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="kicker">⧉ Sectores</span>
+        <h2 class="section__title">Dos operaciones. <em>Un mismo sistema</em>.</h2>
+      </div>
+
+      <div class="sectors-grid reveal reveal-stagger">
+        <article class="panel sector-card">
+          <div class="sector-card__media">
+            <img src="assets/sector-copropiedades.jpg" alt="Zona común de una copropiedad en recorrido de inspección" loading="lazy">
+          </div>
+          <div class="sector-card__body">
+            <span class="sector-card__tag">Propiedad horizontal</span>
+            <h3 class="sector-card__title">Copropiedades</h3>
+            <p class="sector-card__desc">Del recorrido diario de vigilancia al acta de asamblea: todo lo que hoy vive en planillas sueltas, en un solo formulario.</p>
+            <ul class="sector-card__list">
+              <li>Inspección de zonas comunes</li>
+              <li>Registro de incidencias</li>
+              <li>Rondas de vigilancia</li>
+              <li>Actas de administración</li>
+            </ul>
+            <a href="#plantillas" class="btn btn--ghost btn--sm sector-card__cta">Ver plantillas de copropiedad</a>
+          </div>
+        </article>
+
+        <article class="panel sector-card">
+          <div class="sector-card__media">
+            <img src="assets/sector-obra.jpg" alt="Frente de obra civil durante una inspección de seguridad" loading="lazy">
+          </div>
+          <div class="sector-card__body">
+            <span class="sector-card__tag">Construcción</span>
+            <h3 class="sector-card__title">Obras civiles</h3>
+            <p class="sector-card__desc">Desde la bitácora diaria hasta el acta de vecindad: reportes técnicos que quedan firmados en el sitio, no reescritos en la oficina.</p>
+            <ul class="sector-card__list">
+              <li>Bitácora diaria de obra</li>
+              <li>Inspecciones de seguridad y SST</li>
+              <li>Listas de chequeo técnico</li>
+              <li>Entregas y actas de vecindad</li>
+            </ul>
+            <a href="#plantillas" class="btn btn--ghost btn--sm sector-card__cta">Ver plantillas de obra</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPLIT: CÓMO FUNCIONA -->
+  <section class="section" id="como-funciona">
+    <div class="container split">
+      <div class="split__text reveal">
+        <span class="kicker">✎ Cómo funciona</span>
+        <h2 class="section__title">Del celular del operario al <em>WhatsApp</em> del responsable</h2>
+        <div class="split__steps">
+          <div class="split__step">
+            <span class="split__step-num">01</span>
+            <div>
+              <h3 class="split__step-title">Se llena en el sitio</h3>
+              <p class="split__step-desc">El residente, el vigilante o el operario completa el formulario desde su propio celular, sin salir de la zona común o del frente de obra.</p>
+            </div>
+          </div>
+          <div class="split__step">
+            <span class="split__step-num">02</span>
+            <div>
+              <h3 class="split__step-title">El sistema arma el documento</h3>
+              <p class="split__step-desc">Fotos, firma y respuestas se organizan automáticamente en un PDF con el membrete de tu operación.</p>
+            </div>
+          </div>
+          <div class="split__step">
+            <span class="split__step-num">03</span>
+            <div>
+              <h3 class="split__step-title">Llega por WhatsApp</h3>
+              <p class="split__step-desc">El administrador o el director de obra lo recibe en segundos, listo para archivar o para actuar sobre lo reportado.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="split__visual reveal">
+        <div class="split__frame" aria-hidden="true">
+          <span class="split__frame-scan"></span>
+          <span class="split__frame-glyph">⧉</span>
+          <span class="split__frame-caption">Flujo digital · WhatsApp</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLANTILLAS -->
+  <section class="section" id="plantillas">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="kicker">☑ Plantillas</span>
+        <h2 class="section__title">Empieza con <em>plantillas probadas</em> en campo</h2>
+      </div>
+
+      <div class="templates-list reveal reveal-stagger">
+        <article class="panel template-item">
+          <div class="template-item__head">
+            <h3 class="template-item__name">Inspección de zonas comunes</h3>
+            <span class="template-item__tag">Copropiedades</span>
+          </div>
+          <p class="template-item__desc">Recorrido programado por parqueaderos, zonas sociales y áreas comunes, con registro fotográfico de hallazgos.</p>
+        </article>
+
+        <article class="panel template-item">
+          <div class="template-item__head">
+            <h3 class="template-item__name">Bitácora diaria de obra</h3>
+            <span class="template-item__tag">Obra civil</span>
+          </div>
+          <p class="template-item__desc">Registro diario de avance, personal en sitio, maquinaria y observaciones del director de obra.</p>
+        </article>
+
+        <article class="panel template-item">
+          <div class="template-item__head">
+            <h3 class="template-item__name">Inspección de seguridad y SST</h3>
+            <span class="template-item__tag">Obra civil</span>
+          </div>
+          <p class="template-item__desc">Verificación de elementos de protección personal, señalización y condiciones de riesgo en el frente de obra.</p>
+        </article>
+
+        <article class="panel template-item">
+          <div class="template-item__head">
+            <h3 class="template-item__name">Reporte de incidencia</h3>
+            <span class="template-item__tag">Copropiedades</span>
+          </div>
+          <p class="template-item__desc">Registro inmediato de daños, quejas o novedades reportadas por residentes o personal de vigilancia.</p>
+        </article>
+
+        <article class="panel template-item">
+          <div class="template-item__head">
+            <h3 class="template-item__name">Entrega de apartamento y acta de vecindad</h3>
+            <span class="template-item__tag">Obra civil</span>
+          </div>
+          <p class="template-item__desc">Checklist de entrega al propietario y registro del estado de las unidades vecinas antes del inicio de obra.</p>
+        </article>
+
+        <article class="panel template-item">
+          <div class="template-item__head">
+            <h3 class="template-item__name">Ronda de vigilancia</h3>
+            <span class="template-item__tag">Copropiedades</span>
+          </div>
+          <p class="template-item__desc">Registro de horario, puntos de control y novedades de cada turno de seguridad.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPLIT: TRAZABILIDAD -->
+  <section class="section" id="trazabilidad">
+    <div class="container split split--reverse">
+      <div class="split__text reveal">
+        <span class="kicker">⧉ Trazabilidad</span>
+        <h2 class="section__title">Cada reporte, <em>fechado y firmado</em></h2>
+        <p class="section__lead">Se acabó el cuaderno de obra que se moja, la planilla que se traspapela o el reporte que "alguien tenía que mandar". Cada formulario queda con fecha, hora, firma y evidencia fotográfica, archivado y disponible para consulta o auditoría en cualquier momento.</p>
+        <div class="split__points">
+          <div class="split__point">Fecha y hora automática</div>
+          <div class="split__point">Firma digital embebida</div>
+          <div class="split__point">Evidencia fotográfica adjunta</div>
+          <div class="split__point">Archivo permanente</div>
+        </div>
+      </div>
+      <div class="split__visual reveal">
+        <div class="split__frame" aria-hidden="true">
+          <span class="split__frame-scan"></span>
+          <span class="split__frame-glyph">◷</span>
+          <span class="split__frame-caption">Registro archivado</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEAD MAGNET -->
+  <section class="section" id="guia">
+    <div class="container">
+      <div class="panel lead-magnet reveal">
+        <div class="lead-magnet__panel">
+          <span class="kicker">✉ Guía gratuita</span>
+          <h2 class="section__title">Digitaliza los reportes de campo de tu operación en <em>30 días</em></h2>
+          <p class="section__lead">Una guía práctica para pasar del papel al formulario digital sin traumatismos: qué formularios priorizar, cómo capacitar al equipo de campo y cómo medir el ahorro de tiempo administrativo desde el primer mes.</p>
+          <form class="lead-magnet__form demo-form" id="guide-form" data-toast="guia" novalidate>
+            <label class="visually-hidden" for="guide-email">Correo para recibir la guía</label>
+            <input class="field" type="email" id="guide-email" name="email" placeholder="tu correo" autocomplete="email" required>
+            <button class="btn btn--primary" type="submit">Descargar guía</button>
+          </form>
+        </div>
+        <div class="doc-3d-stage" aria-hidden="true">
+          <div class="doc-3d">
+            <div class="doc-3d__bar"></div>
+            <div class="doc-3d__bar"></div>
+            <div class="doc-3d__bar"></div>
+            <div class="doc-3d__bar"></div>
+            <div class="doc-3d__bar"></div>
+            <div class="doc-3d__bar"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIOS -->
+  <section class="section" id="testimonios">
+    <div class="container">
+      <div class="section__header section__header--center reveal">
+        <span class="kicker">✍ Testimonios</span>
+        <h2 class="section__title">Lo que dicen quienes ya <em>dejaron el papel</em></h2>
+      </div>
+
+      <div class="testimonials-grid reveal reveal-stagger">
+        <article class="panel testimonial-card">
+          <p class="testimonial-card__quote">Antes perdíamos actas de mantenimiento cada mes. Ahora cada inspección de zona común llega firmada y con fotos, el mismo día.</p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar">MR</div>
+            <div>
+              <div class="testimonial-card__name">M. Restrepo</div>
+              <div class="testimonial-card__role">Administradora · Conjunto de 320 unidades</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel testimonial-card">
+          <p class="testimonial-card__quote">La bitácora de obra dejó de depender de que alguien la transcribiera en la oficina. El reporte del capataz llega a mi WhatsApp antes de que termine el turno.</p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar">JC</div>
+            <div>
+              <div class="testimonial-card__name">J. Cárdenas</div>
+              <div class="testimonial-card__role">Director de obra · Proyecto de 4 torres</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel testimonial-card">
+          <p class="testimonial-card__quote">Para SST necesitábamos evidencia real, con fecha y firma. Copestyle nos dio eso sin que el personal tuviera que aprender nada complicado.</p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar">LO</div>
+            <div>
+              <div class="testimonial-card__name">L. Ospina</div>
+              <div class="testimonial-card__role">Coordinador SST · Constructora</div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRECIOS -->
+  <section class="section" id="precios">
+    <div class="container">
+      <div class="section__header section__header--center reveal">
+        <span class="kicker">◷ Precios</span>
+        <h2 class="section__title">Un plan para <em>cada operación</em></h2>
+        <p class="section__lead">Pago único de implementación más hosting en la nube. Sin contratos forzosos ni letra pequeña.</p>
+        <span class="badge">✉ Precio de lanzamiento</span>
+      </div>
+
+      <div class="pricing-grid reveal reveal-stagger">
+        <article class="panel price-card">
+          <h3 class="price-card__name">Básico</h3>
+          <p class="price-card__tagline">Función completa, diseño estándar</p>
+          <div class="price-card__was">
+            <span class="price-card__old">$599 USD</span>
+            <span class="price-card__discount">-67%</span>
+          </div>
+          <p class="price-card__price">
+            <span class="price-card__amount">$199</span>
+            <span class="price-card__currency">USD</span>
+          </p>
+          <p class="price-card__note">Instalación única · <strong>+$29,90 USD/mes</strong></p>
+          <ul class="price-card__features">
+            <li class="is-included">✓ App completa: dashboard, Excel, login</li>
+            <li class="is-included">✓ Usuarios ilimitados</li>
+            <li class="is-included">✓ Diseño estándar (sin marca propia)</li>
+            <li class="is-included">✓ Hasta 150 reportes/mes</li>
+            <li class="is-included">✓ Capacitación 1 h</li>
+            <li class="is-included">✓ Soporte 30 días · sin ajustes</li>
+          </ul>
+          <button class="btn btn--ghost btn--block price-card__cta" data-plan="basico" type="button">Solicitar demo</button>
+        </article>
+
+        <article class="panel price-card price-card--featured">
+          <span class="price-card__badge">Más solicitado</span>
+          <h3 class="price-card__name">Estándar</h3>
+          <p class="price-card__tagline">Con tu marca</p>
+          <div class="price-card__was">
+            <span class="price-card__old">$999 USD</span>
+            <span class="price-card__discount">-50%</span>
+          </div>
+          <p class="price-card__price">
+            <span class="price-card__amount">$499</span>
+            <span class="price-card__currency">USD</span>
+          </p>
+          <p class="price-card__note">Instalación única · <strong>+$39,90 USD/mes</strong></p>
+          <ul class="price-card__features">
+            <li class="is-included">✓ Todo Básico</li>
+            <li class="is-included">✓ Colores corporativos + logo en PDF</li>
+            <li class="is-included">✓ Hasta 5 formularios a medida</li>
+            <li class="is-included">✓ Hasta 500 reportes/mes</li>
+            <li class="is-included">✓ Soporte 60 días · respuesta &lt; 24 h</li>
+            <li class="is-included">✓ Capacitación 2 h + 1 ajuste</li>
+          </ul>
+          <button class="btn btn--primary btn--block price-card__cta" data-plan="estandar" type="button">Solicitar demo</button>
+        </article>
+
+        <article class="panel price-card">
+          <h3 class="price-card__name">Premium</h3>
+          <p class="price-card__tagline">Tu marca y dominio propios</p>
+          <div class="price-card__was">
+            <span class="price-card__old">$1.499 USD</span>
+            <span class="price-card__discount">-33%</span>
+          </div>
+          <p class="price-card__price">
+            <span class="price-card__amount">$999</span>
+            <span class="price-card__currency">USD</span>
+          </p>
+          <p class="price-card__note">Instalación única · <strong>+$59,90 USD/mes</strong></p>
+          <ul class="price-card__features">
+            <li class="is-included">✓ Todo Estándar</li>
+            <li class="is-included">✓ Dominio propio + marca 100% propia</li>
+            <li class="is-included">✓ Formularios y reportes ilimitados</li>
+            <li class="is-included">✓ Soporte 1 año prioritario + gestor</li>
+            <li class="is-included">✓ Capacitación completa</li>
+            <li class="is-included">✓ Ajustes ilimitados (1er año)</li>
+          </ul>
+          <button class="btn btn--ghost btn--block price-card__cta" data-plan="premium" type="button">Solicitar demo</button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section__header section__header--center reveal">
+        <span class="kicker">✎ Preguntas frecuentes</span>
+        <h2 class="section__title">Antes de <em>empezar</em></h2>
+      </div>
+
+      <div class="faq-list reveal">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>¿Necesito instalar algo?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>No. Copestyle Forms funciona desde el navegador del celular o del computador, sin aplicación que descargar ni licencias individuales que gestionar.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>¿Funciona sin señal en campo o en obra?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Sí. El formulario se guarda en el dispositivo si no hay conexión y se envía automáticamente en cuanto el celular vuelve a tener señal.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>¿Los PDF con firma digital son válidos como evidencia?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>El documento queda con fecha, hora, geolocalización y firma embebida, lo que lo convierte en un respaldo sólido para auditorías internas, procesos de SST o reclamaciones administrativas.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>¿Pueden crear formularios a la medida de mi operación?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Sí. Configuramos los campos, listas de chequeo y flujos según cómo trabaja tu copropiedad o tu obra, no al revés.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>¿Qué incluye el soporte?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Acompañamiento en la implementación inicial, ajustes a los formularios y resolución de dudas del equipo administrativo u operativo durante el periodo contratado.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="section cta-final" id="cta-final">
+    <div class="container">
+      <div class="reveal">
+        <span class="kicker">◷ Siguiente paso</span>
+        <h2 class="section__title">Empieza a <em>digitalizar</em> tus reportes de campo</h2>
+        <p class="section__lead section__lead--center">Agenda una demo de 20 minutos y te mostramos cómo se vería Copestyle Forms en tu copropiedad o en tu obra.</p>
+        <form class="cta-final__form demo-form" id="cta-form" novalidate>
+          <label class="visually-hidden" for="cta-email">Correo de trabajo</label>
+          <input class="field" type="email" id="cta-email" name="email" placeholder="tu correo de trabajo" autocomplete="email" required>
+          <button class="btn btn--primary" type="submit">Solicitar demo</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__col">
+        <div class="footer__brand">
+          <img class="footer__logo" src="assets/LogoCopestyle.png" alt="Copestyle Forms">
+          <span class="nav__wordmark">Copestyle <span>Forms</span></span>
+        </div>
+        <p class="footer__desc">Formularios digitales de campo para copropiedades y obras civiles. Sin papel, sin demoras.</p>
+      </div>
+
+      <div class="footer__col">
+        <p class="footer__col-title">Producto</p>
+        <ul>
+          <li><a href="#funciones">Funciones</a></li>
+          <li><a href="#sectores">Sectores</a></li>
+          <li><a href="#plantillas">Plantillas</a></li>
+          <li><a href="#precios">Precios</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <p class="footer__col-title">Compañía</p>
+        <ul>
+          <li><a href="#">Sobre nosotros</a></li>
+          <li><a href="#">Contacto</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <p class="footer__col-title">Legal</p>
+        <ul>
+          <li><a href="#">Términos de servicio</a></li>
+          <li><a href="#">Política de privacidad</a></li>
+          <li><a href="#">Tratamiento de datos</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <span>© 2026 Copestyle Forms. Todos los derechos reservados.</span>
+      <span>Hecho para copropiedades y obra civil.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+<script src="js/scene.js" defer></script>
+<script src="js/interactions.js" defer></script>
+<script src="js/forms.js" defer></script>
+</body>
+</html>
