@@ -71,26 +71,50 @@
     });
   });
 
+  /* ---------- Menú móvil ---------- */
+  var navToggle = document.getElementById('nav-toggle');
+  var navMobileMenu = document.getElementById('nav-mobile-menu');
+
+  if (navToggle && navMobileMenu) {
+    navToggle.addEventListener('click', function () {
+      var isOpen = navMobileMenu.classList.toggle('is-open');
+      navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      navToggle.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
+    });
+
+    navMobileMenu.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        navMobileMenu.classList.remove('is-open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        navToggle.setAttribute('aria-label', 'Abrir menú');
+      });
+    });
+  }
+
   /* ---------- Nav activo según la sección visible ---------- */
-  var navLinks = document.querySelectorAll('.nav__links a[href^="#"]');
+  var navLinks = document.querySelectorAll('.nav__links a[href^="#"], .nav__mobile-links a[href^="#"]');
   var navMap = {};
 
   navLinks.forEach(function (link) {
     var id = link.getAttribute('href').slice(1);
     var section = document.getElementById(id);
-    if (section) navMap[id] = link;
+    if (!section) return;
+    if (!navMap[id]) navMap[id] = [];
+    navMap[id].push(link);
   });
 
   if ('IntersectionObserver' in window && Object.keys(navMap).length) {
     var spyObserver = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {
-          var link = navMap[entry.target.id];
-          if (!link || !entry.isIntersecting) return;
+          var links = navMap[entry.target.id];
+          if (!links || !entry.isIntersecting) return;
           navLinks.forEach(function (l) {
             l.classList.remove('is-active');
           });
-          link.classList.add('is-active');
+          links.forEach(function (link) {
+            link.classList.add('is-active');
+          });
         });
       },
       { rootMargin: '-45% 0px -50% 0px', threshold: 0 }
