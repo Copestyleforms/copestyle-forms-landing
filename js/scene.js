@@ -25,6 +25,7 @@
   var clock = new THREE.Clock();
 
   var scrollState = { progress: 0 };
+  var formState = { step: 0, steps: 6, progress: 0 };
   var cam = {
     theta: -0.32,
     height: 0.35,
@@ -151,8 +152,6 @@
   }
 
   /* Dibuja el formulario simulado en el canvas de la pantalla */
-  var formState = { step: 0, steps: 6, progress: 0 };
-
   function drawScreen() {
     var w = screenCanvas.width;
     var h = screenCanvas.height;
@@ -310,6 +309,13 @@
     cam.targetTheta = -0.32 + progress * 0.95;
     cam.targetHeight = 0.35 - progress * 0.85;
     cam.targetDist = 6.6 - progress * 1.5;
+
+    // La escena es un fondo fijo (position: fixed), así que se desvanece
+    // en menos de un viewport de scroll para no chocar visualmente con
+    // el contenido que entra por debajo del hero.
+    var fadeDistance = window.innerHeight * 0.6;
+    var heroFade = 1 - Math.min(Math.max(window.scrollY / fadeDistance, 0), 1);
+    container.style.opacity = heroFade;
   }
 
   function updateCameraPosition(instant) {
