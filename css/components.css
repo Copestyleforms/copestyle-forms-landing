@@ -252,103 +252,152 @@
   border-right: 1px solid var(--electric-line);
 }
 
-/* ---------- Hero: halo de circuito (eco del emblema de marca) ---------- */
+/* ---------- Hero: mockup de formulario en el celular ---------- */
 .hero__halo {
   position: relative;
   width: 100%;
   max-width: 380px;
-  aspect-ratio: 1 / 1;
 }
 
-.hero__halo-ring {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.hero__halo-ring--1 {
-  width: 100%;
-  height: 100%;
-  border: 1px solid var(--border-electric);
-  opacity: 0.55;
-}
-
-.hero__halo-ring--2 {
-  width: 70%;
-  height: 70%;
-  border: 1px solid var(--border);
-  opacity: 0.6;
-  animation: spin-slow 42s linear infinite;
-}
-
-.hero__halo-ring--3 {
-  width: 40%;
-  height: 40%;
-  border: 1px dashed var(--border-electric);
-  opacity: 0.7;
-  animation: spin-slow 26s linear infinite reverse;
-}
-
-.hero__halo-core {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 3;
-  width: 88px;
-  height: 88px;
-  border-radius: 50%;
+.phone-mock {
+  position: relative;
+  z-index: 2;
+  width: 230px;
+  margin-inline: auto;
+  border-radius: 30px;
+  padding: 14px 14px 18px;
   background: var(--surface-strong);
-  border: 1px solid var(--border-electric);
+  border: 1px solid var(--border-strong);
+  box-shadow: var(--shadow-lift);
+}
+
+.phone-mock__notch {
+  width: 56px;
+  height: 6px;
+  margin: 0 auto 12px;
+  border-radius: 4px;
+  background: var(--void-soft);
+}
+
+.phone-mock__screen {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px;
+  border-radius: 18px;
+  background: var(--surface-solid);
+}
+
+.phone-mock__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding-bottom: 8px;
+  margin-bottom: 2px;
+  border-bottom: 1px solid var(--border);
+}
+
+.phone-mock__head-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--ice);
+}
+
+.phone-mock__head-folio {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--electric-bright);
+}
+
+.phone-mock__field {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.66rem;
+  color: var(--steel);
+}
+
+.phone-mock__field.is-done {
+  color: var(--silver);
+}
+
+.phone-mock__check {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.9rem;
-  color: var(--electric-bright);
-  box-shadow: var(--glow-sm);
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  border-radius: 4px;
+  border: 1px solid var(--border-strong);
+  font-size: 0.6rem;
+  color: transparent;
 }
 
-.hero__halo-spoke {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 50%;
-  height: 1px;
-  background: linear-gradient(90deg, var(--electric-line), transparent);
-  transform-origin: 0 50%;
-}
-
-.hero__halo-spoke::after {
-  content: '';
-  position: absolute;
-  right: -3px;
-  top: -3px;
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
+.phone-mock__field.is-done .phone-mock__check {
   background: var(--electric);
-  box-shadow: 0 0 8px rgba(77, 184, 255, 0.75);
+  border-color: var(--electric);
+  color: var(--void-deep);
 }
 
-.hero__halo-spoke--1 {
-  transform: rotate(20deg);
+.phone-mock__photos {
+  display: flex;
+  gap: 6px;
+  margin-top: 2px;
 }
-.hero__halo-spoke--2 {
-  transform: rotate(85deg);
+
+.phone-mock__photo {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, var(--surface-solid), #16283f);
+  border: 1px solid var(--border);
 }
-.hero__halo-spoke--3 {
-  transform: rotate(150deg);
+
+.phone-mock__photo.is-add {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  color: var(--steel);
+  border-style: dashed;
 }
-.hero__halo-spoke--4 {
-  transform: rotate(205deg);
+
+.phone-mock__signature {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-top: 8px;
+  margin-top: 2px;
+  border-top: 1px solid var(--border);
+  font-size: 0.62rem;
+  color: var(--steel);
 }
-.hero__halo-spoke--5 {
-  transform: rotate(265deg);
+
+.phone-mock__signature-svg {
+  width: 56px;
+  height: 16px;
+  flex-shrink: 0;
 }
-.hero__halo-spoke--6 {
-  transform: rotate(325deg);
+
+.phone-mock__signature-svg path {
+  fill: none;
+  stroke: var(--electric-bright);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.phone-mock__submit {
+  margin-top: 4px;
+  padding: 8px;
+  border-radius: 10px;
+  background: var(--electric);
+  color: var(--void-deep);
+  text-align: center;
+  font-size: 0.66rem;
+  font-weight: 700;
 }
 
 .hero__halo-tag {
@@ -358,17 +407,17 @@
 }
 
 .hero__halo-tag--1 {
-  top: 4%;
-  right: -8%;
+  top: 2%;
+  right: -4%;
 }
 
 .hero__halo-tag--2 {
-  bottom: 14%;
-  right: -14%;
+  top: 46%;
+  right: -12%;
 }
 
 .hero__halo-tag--3 {
-  bottom: 0;
+  bottom: -6%;
   left: -10%;
 }
 
@@ -504,25 +553,23 @@
   margin-top: 2rem;
 }
 
-/* ---------- Split visual ---------- */
-.split__frame {
+/* ---------- Split visual: tarjetas con esquinas de plano técnico ---------- */
+.flow-mock,
+.record-mock {
   position: relative;
   width: 100%;
   max-width: 380px;
-  aspect-ratio: 4 / 5;
   border: 1px solid var(--border-electric);
   border-radius: var(--radius-lg);
   background: var(--surface);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-.split__frame::before,
-.split__frame::after {
+.flow-mock::before,
+.flow-mock::after,
+.record-mock::before,
+.record-mock::after {
   content: '';
   position: absolute;
   width: 26px;
@@ -530,62 +577,145 @@
   z-index: 2;
 }
 
-.split__frame::before {
+.flow-mock::before,
+.record-mock::before {
   top: -1px;
   left: -1px;
   border-top: 2px solid var(--electric);
   border-left: 2px solid var(--electric);
 }
 
-.split__frame::after {
+.flow-mock::after,
+.record-mock::after {
   bottom: -1px;
   right: -1px;
   border-bottom: 2px solid var(--electric);
   border-right: 2px solid var(--electric);
 }
 
-.split__frame-scan {
-  position: absolute;
-  left: 6%;
-  right: 6%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--electric-bright), transparent);
-  animation: scan-sweep 4.5s ease-in-out infinite;
+/* ---------- Cómo funciona: mini flujo de 3 pasos ---------- */
+.flow-mock {
+  padding: 2.6rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.split__frame-glyph {
-  position: relative;
-  width: 104px;
-  height: 104px;
-  border-radius: 50%;
-  border: 1px solid var(--border-electric);
+.flow-mock__step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  text-align: center;
+}
+
+.flow-mock__icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2.2rem;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 1px solid var(--border-electric);
+  background: var(--surface-strong);
+  font-size: 1.4rem;
   color: var(--electric);
 }
 
-.split__frame-glyph::before {
-  content: '';
-  position: absolute;
-  inset: -17px;
-  border: 1px dashed var(--border);
-  border-radius: 50%;
-  animation: spin-slow 18s linear infinite;
+.flow-mock__step.is-active .flow-mock__icon {
+  color: var(--void-deep);
+  background: var(--electric);
+  box-shadow: var(--glow-sm);
 }
 
-.split__frame-caption {
-  position: absolute;
-  bottom: 1.7rem;
-  left: 50%;
-  transform: translateX(-50%);
+.flow-mock__label {
   font-family: var(--font-mono);
-  font-size: 0.62rem;
-  letter-spacing: 0.22em;
+  font-size: 0.64rem;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--steel);
+  color: var(--silver);
+  max-width: 14ch;
+}
+
+.flow-mock__connector {
+  width: 1px;
+  height: 32px;
+  margin: 0.2rem 0;
+  background: linear-gradient(180deg, var(--electric-line), var(--border));
+}
+
+/* ---------- Trazabilidad: tarjeta de registro archivado ---------- */
+.record-mock {
+  padding: 1.7rem 1.7rem 1.9rem;
+}
+
+.record-mock__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding-bottom: 0.9rem;
+  margin-bottom: 0.4rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.record-mock__folio {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--ice);
+}
+
+.record-mock__stamp {
+  flex-shrink: 0;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--electric-bright);
+  padding: 0.3rem 0.6rem;
+  border: 1px solid var(--border-electric);
+  border-radius: var(--radius-sm);
   white-space: nowrap;
+}
+
+.record-mock__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding-block: 0.6rem;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.82rem;
+}
+
+.record-mock__row:last-of-type {
+  border-bottom: none;
+}
+
+.record-mock__label {
+  color: var(--steel);
+}
+
+.record-mock__value {
+  color: var(--ice);
+}
+
+.record-mock__value.is-check {
+  color: var(--electric-bright);
+}
+
+.record-mock__photos {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.record-mock__photo {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(135deg, var(--surface-solid), #16283f);
+  border: 1px solid var(--border);
 }
 
 .split__step {

@@ -21,7 +21,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="css/reset.css">
 <link rel="stylesheet" href="css/layout.css">
@@ -32,9 +32,6 @@
 
 <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
 
-<div id="scene-container" aria-hidden="true">
-  <canvas id="webgl"></canvas>
-</div>
 <div class="vignette" aria-hidden="true"></div>
 <div class="blueprint-grid" aria-hidden="true"></div>
 <div class="grain" aria-hidden="true"></div>
@@ -42,7 +39,6 @@
 <nav class="nav">
   <div class="container nav__inner">
     <div class="nav__brand">
-      <img class="nav__logo" src="assets/LogoCopestyle.png" alt="Copestyle Forms">
       <span class="nav__wordmark">Copestyle <span>Forms</span></span>
     </div>
     <ul class="nav__links">
@@ -124,16 +120,43 @@
 
       <div class="hero__visual" aria-hidden="true">
         <div class="hero__halo">
-          <span class="hero__halo-ring hero__halo-ring--1"></span>
-          <span class="hero__halo-ring hero__halo-ring--2"></span>
-          <span class="hero__halo-ring hero__halo-ring--3"></span>
-          <span class="hero__halo-spoke hero__halo-spoke--1"></span>
-          <span class="hero__halo-spoke hero__halo-spoke--2"></span>
-          <span class="hero__halo-spoke hero__halo-spoke--3"></span>
-          <span class="hero__halo-spoke hero__halo-spoke--4"></span>
-          <span class="hero__halo-spoke hero__halo-spoke--5"></span>
-          <span class="hero__halo-spoke hero__halo-spoke--6"></span>
-          <span class="hero__halo-core">⧉</span>
+          <div class="phone-mock">
+            <div class="phone-mock__notch"></div>
+            <div class="phone-mock__screen">
+              <div class="phone-mock__head">
+                <span class="phone-mock__head-title">Inspección zona común</span>
+                <span class="phone-mock__head-folio">#0482</span>
+              </div>
+              <div class="phone-mock__field is-done">
+                <span class="phone-mock__check">✓</span>
+                <span>Parqueadero visitantes</span>
+              </div>
+              <div class="phone-mock__field is-done">
+                <span class="phone-mock__check">✓</span>
+                <span>Zona social y BBQ</span>
+              </div>
+              <div class="phone-mock__field is-done">
+                <span class="phone-mock__check">✓</span>
+                <span>Portería y acceso</span>
+              </div>
+              <div class="phone-mock__field">
+                <span class="phone-mock__check"></span>
+                <span>Piscina</span>
+              </div>
+              <div class="phone-mock__photos">
+                <span class="phone-mock__photo"></span>
+                <span class="phone-mock__photo"></span>
+                <span class="phone-mock__photo is-add">+</span>
+              </div>
+              <div class="phone-mock__signature">
+                <svg viewBox="0 0 140 32" class="phone-mock__signature-svg" preserveAspectRatio="none">
+                  <path d="M4 24 C 12 8, 20 8, 26 20 S 40 32, 46 14 S 58 4, 66 22 S 80 28, 88 12 S 102 4, 116 20 S 128 26, 136 14" />
+                </svg>
+                <span>Firma digital</span>
+              </div>
+              <div class="phone-mock__submit">Enviar reporte</div>
+            </div>
+          </div>
           <span class="badge hero__halo-tag hero__halo-tag--1">✍ Firma digital</span>
           <span class="badge hero__halo-tag hero__halo-tag--2">✉ PDF por WhatsApp</span>
           <span class="badge hero__halo-tag hero__halo-tag--3">◷ Entrega en segundos</span>
@@ -279,10 +302,21 @@
         </div>
       </div>
       <div class="split__visual reveal">
-        <div class="split__frame" aria-hidden="true">
-          <span class="split__frame-scan"></span>
-          <span class="split__frame-glyph">⧉</span>
-          <span class="split__frame-caption">Flujo digital · WhatsApp</span>
+        <div class="flow-mock" aria-hidden="true">
+          <div class="flow-mock__step">
+            <span class="flow-mock__icon">☑</span>
+            <span class="flow-mock__label">Formulario en el celular</span>
+          </div>
+          <span class="flow-mock__connector"></span>
+          <div class="flow-mock__step">
+            <span class="flow-mock__icon">⧉</span>
+            <span class="flow-mock__label">PDF con membrete</span>
+          </div>
+          <span class="flow-mock__connector"></span>
+          <div class="flow-mock__step is-active">
+            <span class="flow-mock__icon">✉</span>
+            <span class="flow-mock__label">Enviado por WhatsApp</span>
+          </div>
         </div>
       </div>
     </div>
@@ -363,10 +397,28 @@
         </div>
       </div>
       <div class="split__visual reveal">
-        <div class="split__frame" aria-hidden="true">
-          <span class="split__frame-scan"></span>
-          <span class="split__frame-glyph">◷</span>
-          <span class="split__frame-caption">Registro archivado</span>
+        <div class="record-mock" aria-hidden="true">
+          <div class="record-mock__head">
+            <span class="record-mock__folio">Folio #0482</span>
+            <span class="record-mock__stamp">✓ Archivado</span>
+          </div>
+          <div class="record-mock__row">
+            <span class="record-mock__label">Fecha y hora</span>
+            <span class="record-mock__value">14 jul · 10:42 a.m.</span>
+          </div>
+          <div class="record-mock__row">
+            <span class="record-mock__label">Firma digital</span>
+            <span class="record-mock__value is-check">✓ Embebida</span>
+          </div>
+          <div class="record-mock__row">
+            <span class="record-mock__label">Evidencia</span>
+            <span class="record-mock__value is-check">✓ 3 fotos</span>
+          </div>
+          <div class="record-mock__photos">
+            <span class="record-mock__photo"></span>
+            <span class="record-mock__photo"></span>
+            <span class="record-mock__photo"></span>
+          </div>
         </div>
       </div>
     </div>
@@ -628,7 +680,6 @@
     <div class="footer__grid">
       <div class="footer__col">
         <div class="footer__brand">
-          <img class="footer__logo" src="assets/LogoCopestyle.png" alt="Copestyle Forms">
           <span class="nav__wordmark">Copestyle <span>Forms</span></span>
         </div>
         <p class="footer__desc">Formularios digitales de campo para copropiedades y obras civiles. Sin papel, sin demoras.</p>
@@ -672,8 +723,6 @@
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
-<script src="js/scene.js" defer></script>
 <script src="js/interactions.js" defer></script>
 <script src="js/forms.js" defer></script>
 </body>
