@@ -1135,3 +1135,158 @@
   color: var(--electric);
   font-weight: 700;
 }
+
+/* ---------- Consentimiento de datos (formularios) ---------- */
+.consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  width: 100%;
+  margin-top: 0.2rem;
+}
+
+.consent__input {
+  flex-shrink: 0;
+  width: 17px;
+  height: 17px;
+  margin-top: 0.15rem;
+  accent-color: var(--electric);
+  cursor: pointer;
+}
+
+.consent__label {
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: var(--steel);
+  cursor: pointer;
+}
+
+.consent__label a {
+  color: var(--electric-bright);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.consent[aria-invalid="true"] .consent__label {
+  color: #ff8a8a;
+}
+
+/* ---------- Documento legal ---------- */
+.legal-doc {
+  max-width: 72ch;
+}
+
+.legal-doc__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--silver);
+  margin-bottom: 1.4rem;
+  transition: color var(--dur-fast) var(--ease);
+}
+
+.legal-doc__back:hover {
+  color: var(--electric-bright);
+}
+
+.legal-doc__updated {
+  margin-top: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  color: var(--steel);
+}
+
+.legal-doc__intro {
+  margin-top: 1.6rem;
+  color: var(--silver);
+  font-size: 1.02rem;
+  line-height: 1.7;
+}
+
+.legal-doc__entity {
+  margin-top: 2rem;
+  padding: 1.4rem 1.6rem;
+}
+
+.legal-doc__entity dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5rem 1.2rem;
+}
+
+.legal-doc__entity dt {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--steel);
+  white-space: nowrap;
+}
+
+.legal-doc__entity dd {
+  color: var(--ice);
+  font-size: 0.92rem;
+}
+
+.legal-doc section {
+  margin-top: clamp(2.4rem, 4vw, 3.2rem);
+}
+
+.legal-doc h2 {
+  display: flex;
+  align-items: baseline;
+  gap: 0.7rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
+  color: var(--ice);
+}
+
+.legal-doc h2 .legal-doc__num {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--electric);
+}
+
+.legal-doc h3 {
+  margin-top: 1.6rem;
+  font-family: var(--font-wordmark);
+  font-size: 1.02rem;
+  font-weight: 800;
+  color: var(--ice);
+}
+
+.legal-doc p {
+  margin-top: 0.9rem;
+  color: var(--silver);
+  line-height: 1.75;
+}
+
+.legal-doc ul,
+.legal-doc ol {
+  margin-top: 0.9rem;
+  padding-left: 1.3rem;
+  color: var(--silver);
+  line-height: 1.7;
+}
+
+.legal-doc ul { list-style: disc; }
+.legal-doc ol { list-style: decimal; }
+
+.legal-doc li + li {
+  margin-top: 0.5rem;
+}
+
+.legal-doc strong {
+  color: var(--ice);
+}
+
+.legal-doc a {
+  color: var(--electric-bright);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}

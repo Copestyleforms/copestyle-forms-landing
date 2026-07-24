@@ -71,6 +71,8 @@
     var methodRadios = form.querySelectorAll('input[name="contactMethod"]');
     var honeypot = form.querySelector('input[name="empresa"]');
     var submitBtn = form.querySelector('button[type="submit"]');
+    var consentInput = form.querySelector('.consent__input');
+    var consentWrapper = form.querySelector('.consent');
 
     function currentMethod() {
       if (!methodRadios.length) return 'email';
@@ -112,6 +114,13 @@
         clearFieldError(phoneInput);
       });
     }
+    if (consentInput) {
+      consentInput.addEventListener('change', function () {
+        if (consentInput.checked && consentWrapper) {
+          consentWrapper.removeAttribute('aria-invalid');
+        }
+      });
+    }
 
     form.addEventListener('submit', function (event) {
       event.preventDefault();
@@ -129,6 +138,12 @@
           method === 'whatsapp' ? 'Ingresa un número de WhatsApp válido.' : 'Ingresa un correo electrónico válido.'
         );
         activeInput.focus();
+        return;
+      }
+
+      if (consentInput && !consentInput.checked) {
+        if (consentWrapper) consentWrapper.setAttribute('aria-invalid', 'true');
+        consentInput.focus();
         return;
       }
 
@@ -150,6 +165,7 @@
         showToast(MESSAGES[toastKey] || MESSAGES.demo);
         form.reset();
         syncContactMethod();
+        if (consentWrapper) consentWrapper.removeAttribute('aria-invalid');
         if (plan) {
           selectedPlan = null;
         }
