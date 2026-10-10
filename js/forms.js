@@ -12,6 +12,7 @@
 
   var MESSAGES = {
     demo: '¡Listo! Te contactamos en menos de 24 horas para agendar tu demo.',
+    contacto: '¡Listo! Te contactamos en menos de 24 horas para conversar sobre tu proyecto.',
     guia: '¡Listo! Revisa tu correo: la guía llega en los próximos minutos.',
     estandar: 'Excelente elección. Solicita tu demo y te mostramos el plan Estándar en vivo.',
     error: 'No pudimos enviar el formulario. Intenta de nuevo en un momento.'
