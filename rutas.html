@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Copestyle Rutas — Ruteo y entregas para distribuidoras</title>
+<meta name="description" content="Copestyle Rutas planifica las rutas de entrega del día respetando la capacidad de cada vehículo y la ventana horaria de cada cliente. App para el conductor y seguimiento del pedido por WhatsApp." />
+
+<link rel="icon" type="image/png" href="assets/LogoCopestyle.png">
+<link rel="apple-touch-icon" href="assets/LogoCopestyle.png">
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://copestyleforms.github.io/copestyle-forms-landing/rutas.html" />
+<meta property="og:title" content="Copestyle Rutas — Ruteo y entregas para distribuidoras" />
+<meta property="og:description" content="Planifica las rutas del día en minutos, el conductor las sigue desde el celular y tu cliente sabe por WhatsApp a qué hora llega su pedido." />
+<meta property="og:image" content="https://copestyleforms.github.io/copestyle-forms-landing/assets/rutas/despachador-optimizar.webp" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Copestyle Rutas — Ruteo y entregas para distribuidoras" />
+<meta name="twitter:description" content="Planifica las rutas del día en minutos, el conductor las sigue desde el celular y tu cliente sabe por WhatsApp a qué hora llega su pedido." />
+<meta name="twitter:image" content="https://copestyleforms.github.io/copestyle-forms-landing/assets/rutas/despachador-optimizar.webp" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/rutas.css">
+</head>
+<body>
+
+<div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
+<div class="vignette" aria-hidden="true"></div>
+<div class="blueprint-grid" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+
+<nav class="nav">
+  <div class="container nav__inner">
+    <div class="nav__brand">
+      <a href="rutas.html" class="nav__wordmark">Copestyle <span>Rutas</span></a>
+    </div>
+    <ul class="nav__links">
+      <li><a href="#como-funciona">Cómo funciona</a></li>
+      <li><a href="#despachador">Despachador</a></li>
+      <li><a href="#conductor">Conductor</a></li>
+      <li><a href="#cliente">Cliente</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="index.html" class="nav__product-link">Forms ↗</a></li>
+    </ul>
+    <div class="nav__actions">
+      <a href="#hero-form" class="btn btn--primary btn--sm">Solicitar demo</a>
+      <button type="button" class="nav__toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-mobile-menu">
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+      </button>
+    </div>
+  </div>
+  <div class="nav__mobile-menu" id="nav-mobile-menu">
+    <ul class="nav__mobile-links">
+      <li><a href="#como-funciona">Cómo funciona</a></li>
+      <li><a href="#despachador">Despachador</a></li>
+      <li><a href="#conductor">Conductor</a></li>
+      <li><a href="#cliente">Cliente</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="index.html">Copestyle Forms (reportes de campo) ↗</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="container hero__grid rutas-hero__grid">
+      <div class="hero__content">
+        <span class="badge hero__badge">◷ Distribuidoras con flota propia · Ruteo · Entregas</span>
+        <h1 class="hero__title">Las rutas del día, <em>listas antes de salir</em>.</h1>
+        <p class="hero__lead">Carga los pedidos desde Excel, Copestyle Rutas arma las rutas respetando la capacidad de cada vehículo y la ventana horaria de cada cliente, el conductor las sigue desde su celular y tu cliente recibe por WhatsApp a qué hora llega su pedido.</p>
+
+        <form class="hero__form demo-form" id="hero-form" data-source="rutas-hero" novalidate>
+          <div class="contact-toggle" role="radiogroup" aria-label="Cómo prefieres que te contactemos">
+            <label class="contact-toggle__option">
+              <input type="radio" name="contactMethod" value="email" checked>
+              <span>✉ Correo</span>
+            </label>
+            <label class="contact-toggle__option">
+              <input type="radio" name="contactMethod" value="whatsapp">
+              <span>☎ WhatsApp</span>
+            </label>
+          </div>
+          <label class="visually-hidden" for="hero-email">Correo de trabajo</label>
+          <input class="field" type="email" id="hero-email" name="email" placeholder="tu correo de trabajo" autocomplete="email" required>
+          <label class="visually-hidden" for="hero-phone">Número de WhatsApp</label>
+          <input class="field is-hidden" type="tel" id="hero-phone" name="phone" placeholder="tu número de WhatsApp" autocomplete="tel">
+          <input type="text" name="empresa" class="field-trap" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <button class="btn btn--primary" type="submit">Solicitar demo</button>
+        </form>
+        <p class="hero__meta">Demo con tus propios pedidos · Implementación guiada · Soporte incluido</p>
+
+        <div class="rutas-trio">
+          <div class="rutas-trio__item"><span class="rutas-trio__num">01</span><span>Panel del despachador</span></div>
+          <div class="rutas-trio__item"><span class="rutas-trio__num">02</span><span>App del conductor</span></div>
+          <div class="rutas-trio__item"><span class="rutas-trio__num">03</span><span>Seguimiento del cliente</span></div>
+        </div>
+      </div>
+
+      <div class="hero__visual rutas-hero__visual">
+        <figure class="screen-frame screen-frame--hero">
+          <img src="assets/rutas/despachador-optimizar.webp" alt="Panel del despachador de Copestyle Rutas con tres rutas optimizadas sobre el mapa y la carga de cada vehículo" width="1600" height="1067">
+        </figure>
+        <figure class="phone-frame phone-frame--float" aria-hidden="true">
+          <img src="assets/rutas/cliente-seguimiento.webp" alt="" width="600" height="1300">
+        </figure>
+      </div>
+    </div>
+    <div class="scroll-hint">
+      <span>Desplázate</span>
+      <span aria-hidden="true">⌄</span>
+    </div>
+  </section>
+
+  <!-- PROBLEMA -->
+  <section class="section" id="problema">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="kicker">⚠ El día a día sin sistema</span>
+        <h2 class="section__title">Si el ruteo vive en <em>Excel, WhatsApp y la memoria del despachador</em>…</h2>
+      </div>
+
+      <div class="features-grid rutas-pains reveal reveal-stagger">
+        <article class="panel feature-card">
+          <div class="feature-card__icon" aria-hidden="true">◷</div>
+          <h3 class="feature-card__title">Armar las rutas se come la mañana</h3>
+          <p class="feature-card__desc">Repartir pedidos entre vehículos a ojo, cuadrando pesos y horarios, depende de una sola persona y no deja ver si había una forma mejor.</p>
+        </article>
+        <article class="panel feature-card">
+          <div class="feature-card__icon" aria-hidden="true">☎</div>
+          <h3 class="feature-card__title">"¿A qué hora llega mi pedido?"</h3>
+          <p class="feature-card__desc">El cliente llama, el despachador llama al conductor, el conductor contesta manejando. Nadie tiene la respuesta a la mano.</p>
+        </article>
+        <article class="panel feature-card">
+          <div class="feature-card__icon" aria-hidden="true">✎</div>
+          <h3 class="feature-card__title">Las novedades llegan tarde</h3>
+          <p class="feature-card__desc">Un rechazo, un faltante o un local cerrado se conoce cuando el camión vuelve a bodega, sin foto ni soporte para reclamar o reprogramar.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CÓMO FUNCIONA -->
+  <section class="section" id="como-funciona">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="kicker">✎ Cómo funciona</span>
+        <h2 class="section__title">Tres pasos cada mañana. <em>Cero llamadas</em> para saber cómo va la ruta.</h2>
+      </div>
+
+      <div class="rutas-steps reveal reveal-stagger">
+        <article class="panel rutas-step">
+          <span class="rutas-step__num">01</span>
+          <h3 class="rutas-step__title">Carga los pedidos</h3>
+          <p class="rutas-step__desc">Sube el Excel que exporta tu sistema o ERP con la plantilla de Copestyle, o crea los pedidos uno por uno si te llegan por WhatsApp o por teléfono. Las direcciones dudosas se marcan para confirmarlas antes de rutear.</p>
+        </article>
+        <article class="panel rutas-step">
+          <span class="rutas-step__num">02</span>
+          <h3 class="rutas-step__title">Optimiza las rutas</h3>
+          <p class="rutas-step__desc">El sistema reparte las paradas entre tus vehículos respetando la capacidad de cada uno y la ventana horaria de cada cliente, y te muestra rutas, paradas y kilómetros estimados.</p>
+        </article>
+        <article class="panel rutas-step">
+          <span class="rutas-step__num">03</span>
+          <h3 class="rutas-step__title">Ajusta y despacha</h3>
+          <p class="rutas-step__desc">Mueve una parada a otra ruta con un toque y las horas se recalculan. Al despachar, cada conductor recibe su ruta y cada cliente su aviso por WhatsApp.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESPACHADOR -->
+  <section class="section" id="despachador">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="kicker">01 · Panel del despachador</span>
+        <h2 class="section__title">Toda la operación del día <em>en una sola pantalla</em></h2>
+        <p class="section__lead">Planifica por la mañana y monitorea durante el día: qué paradas van entregadas, dónde va cada vehículo y qué novedades reportaron los conductores, con foto.</p>
+      </div>
+
+      <div class="rutas-tabs reveal" data-tabs>
+        <div class="rutas-tabs__list" role="tablist" aria-label="Pantallas del panel del despachador">
+          <button type="button" class="rutas-tabs__tab is-active" role="tab" aria-selected="true" aria-controls="tab-planificar" id="t-planificar">Planificar</button>
+          <button type="button" class="rutas-tabs__tab" role="tab" aria-selected="false" aria-controls="tab-optimizar" id="t-optimizar" tabindex="-1">Rutas optimizadas</button>
+          <button type="button" class="rutas-tabs__tab" role="tab" aria-selected="false" aria-controls="tab-monitorear" id="t-monitorear" tabindex="-1">Operación en vivo</button>
+        </div>
+        <figure class="screen-frame rutas-tabs__panel" role="tabpanel" id="tab-planificar" aria-labelledby="t-planificar">
+          <img src="assets/rutas/despachador-pedidos.webp" alt="Pantalla de planificación: pedidos cargados desde Excel, ventanas horarias, peso y estado de ubicación de cada cliente" width="1600" height="1067" loading="lazy">
+        </figure>
+        <figure class="screen-frame rutas-tabs__panel" role="tabpanel" id="tab-optimizar" aria-labelledby="t-optimizar" hidden>
+          <img src="assets/rutas/despachador-optimizar.webp" alt="Rutas optimizadas sobre el mapa con la carga usada de cada vehículo" width="1600" height="1067" loading="lazy">
+        </figure>
+        <figure class="screen-frame rutas-tabs__panel" role="tabpanel" id="tab-monitorear" aria-labelledby="t-monitorear" hidden>
+          <img src="assets/rutas/despachador-monitorear.webp" alt="Operación en vivo: paradas atendidas, vehículos en ruta y novedades reportadas con foto" width="1600" height="1067" loading="lazy">
+        </figure>
+        <p class="rutas-note">Capturas de la demo con datos de ejemplo.</p>
+      </div>
+
+      <div class="features-grid reveal reveal-stagger">
+        <article class="panel feature-card">
+          <div class="feature-card__icon" aria-hidden="true">⧉</div>
+          <h3 class="feature-card__title">Pedidos desde Excel o en la app</h3>
+          <p class="feature-card__desc">Usa la plantilla para importar lo que exporta tu ERP, o crea pedidos manuales. El sistema valida el formato y te avisa qué direcciones revisar.</p>
+          <p class="feature-card__meta">Pedidos · Excel</p>
+        </article>
+        <article class="panel feature-card">
+          <div class="feature-card__icon" aria-hidden="true">☑</div>
+          <h3 class="feature-card__title">Capacidad y ventanas horarias</h3>
+          <p class="feature-card__desc">Cada ruta respeta los kilos que carga el vehículo y el horario en que el cliente recibe. Si algo no cabe, aparece como alerta antes de despachar.</p>
+          <p class="feature-card__meta">Ruteo · Reglas</p>
+        </article>
+        <article class="panel feature-card">
+          <div class="feature-card__icon" aria-hidden="true">◷</div>
+          <h3 class="feature-card__title">Monitoreo y novedades</h3>
+          <p class="feature-card__desc">Paradas entregadas, siguiente parada de cada conductor y novedades del día (parciales, rechazos, ubicaciones corregidas) con su foto.</p>
+          <p class="feature-card__meta">En vivo · Evidencia</p>
+        </article>
+        <article class="panel feature-card">
+          <div class="feature-card__icon" aria-hidden="true">✉</div>
+          <h3 class="feature-card__title">Clientes con ubicación confirmada</h3>
+          <p class="feature-card__desc">Base de clientes con contacto de WhatsApp, ventana de entrega y ubicación. El conductor puede corregir el pin desde la app cuando la dirección no cuadra.</p>
+          <p class="feature-card__meta">Clientes · Mapa</p>
+        </article>
+        <article class="panel feature-card">
+          <div class="feature-card__icon" aria-hidden="true">✎</div>
+          <h3 class="feature-card__title">Flota y documentos</h3>
+          <p class="feature-card__desc">Vehículos, conductores, capacidad y vencimientos de SOAT y técnico-mecánica en un mismo lugar, junto con la carga asignada de hoy.</p>
+          <p class="feature-card__meta">Flota · Vencimientos</p>
+        </article>
+        <article class="panel feature-card">
+          <div class="feature-card__icon" aria-hidden="true">⧉</div>
+          <h3 class="feature-card__title">Reportes de cumplimiento</h3>
+          <p class="feature-card__desc">Entregas completas, parciales, rechazos y entregas dentro de la ventana, por ruta y por motivo. Exportables a Excel.</p>
+          <p class="feature-card__meta">Reportes · Excel</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONDUCTOR -->
+  <section class="section" id="conductor">
+    <div class="container split">
+      <div class="split__text reveal">
+        <span class="kicker">02 · App del conductor</span>
+        <h2 class="section__title">El conductor sale <em>revisado, cargado y con su ruta</em></h2>
+        <div class="split__steps">
+          <div class="split__step">
+            <span class="split__step-num">01</span>
+            <div>
+              <h3 class="split__step-title">Preoperacional antes de salir</h3>
+              <p class="split__step-desc">Llantas, luces, frenos, combustible y documentos vigentes. La ruta no inicia hasta completar la revisión.</p>
+            </div>
+          </div>
+          <div class="split__step">
+            <span class="split__step-num">02</span>
+            <div>
+              <h3 class="split__step-title">Confirma la carga</h3>
+              <p class="split__step-desc">Pedidos, bultos y kilos de su ruta. Si falta algo, el despachador lo sabe antes de salir y no después, con el cliente.</p>
+            </div>
+          </div>
+          <div class="split__step">
+            <span class="split__step-num">03</span>
+            <div>
+              <h3 class="split__step-title">Entrega con soporte</h3>
+              <p class="split__step-desc">En cada parada registra la entrega con foto y firma, o la novedad con su motivo. El comprobante queda en PDF.</p>
+            </div>
+          </div>
+        </div>
+        <div class="split__points">
+          <div class="split__point">Funciona sin señal</div>
+          <div class="split__point">Sincroniza al reconectar</div>
+        </div>
+      </div>
+      <div class="split__visual reveal">
+        <figure class="phone-frame">
+          <img src="assets/rutas/conductor.webp" alt="App del conductor: revisión del vehículo y confirmación de carga antes de iniciar la ruta" width="600" height="1300" loading="lazy">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLIENTE -->
+  <section class="section" id="cliente">
+    <div class="container split split--reverse">
+      <div class="split__text reveal">
+        <span class="kicker">03 · Seguimiento del cliente</span>
+        <h2 class="section__title">Tu cliente sabe a qué hora llega, <em>sin llamarte</em></h2>
+        <p class="section__lead">Cuando el pedido sale, el cliente recibe un mensaje de WhatsApp con el nombre del conductor, el vehículo y la franja estimada de llegada. Con un enlace ve el estado de su entrega, sin instalar nada.</p>
+        <div class="split__points">
+          <div class="split__point">Aviso "va en camino"</div>
+          <div class="split__point">Franja de llegada</div>
+          <div class="split__point">Conductor y vehículo</div>
+          <div class="split__point">Sin descargar apps</div>
+        </div>
+      </div>
+      <div class="split__visual reveal">
+        <div class="phone-pair">
+          <figure class="phone-frame">
+            <img src="assets/rutas/cliente-whatsapp.webp" alt="Mensaje de WhatsApp al cliente con la llegada estimada y el enlace para seguir la entrega" width="600" height="1300" loading="lazy">
+          </figure>
+          <figure class="phone-frame phone-frame--offset">
+            <img src="assets/rutas/cliente-seguimiento.webp" alt="Página de seguimiento del pedido con la franja de llegada y el estado de la entrega" width="600" height="1300" loading="lazy">
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARA QUIÉN -->
+  <section class="section" id="para-quien">
+    <div class="container">
+      <div class="section__header section__header--center reveal">
+        <span class="kicker">☑ Para quién es</span>
+        <h2 class="section__title">Pensado para quien <em>entrega todos los días</em></h2>
+      </div>
+      <div class="rutas-chips reveal">
+        <span>Distribuidoras de alimentos y bebidas</span>
+        <span>Consumo masivo a tiendas de barrio</span>
+        <span>Panaderías y cárnicos con reparto</span>
+        <span>Droguerías y distribución farmacéutica</span>
+        <span>Materiales y ferreterías</span>
+        <span>Proveedores de restaurantes (HORECA)</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section__header section__header--center reveal">
+        <span class="kicker">✎ Preguntas frecuentes</span>
+        <h2 class="section__title">Antes de <em>empezar</em></h2>
+      </div>
+
+      <div class="faq-list reveal">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>¿Tengo que cambiar mi ERP o mi sistema de facturación?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>No. Copestyle Rutas recibe los pedidos con una plantilla de Excel que puedes llenar con lo que ya exporta tu sistema. También puedes crear pedidos directamente en la app.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>¿El conductor necesita datos todo el tiempo?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>No. La app del conductor guarda la información si se queda sin señal y la sincroniza cuando vuelve a tener conexión.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>¿Mis clientes tienen que instalar algo?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>No. Reciben el aviso por WhatsApp y siguen su pedido desde un enlace que abre en el navegador del celular.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>¿Puedo cambiar las rutas que propone el sistema?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Sí. La optimización es una propuesta: puedes mover paradas entre rutas antes de despachar y las horas y kilómetros se recalculan. Si no te convence, vuelves a la propuesta original.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>¿Cuánto cuesta?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Depende del tamaño de tu operación. En la demo revisamos cuántos vehículos y pedidos manejas y te enviamos una propuesta a la medida.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="section cta-final" id="cta-final">
+    <div class="container">
+      <div class="reveal">
+        <span class="kicker">◷ Siguiente paso</span>
+        <h2 class="section__title">Mira tus rutas de mañana <em>optimizadas</em></h2>
+        <p class="section__lead section__lead--center">Agenda una demo de 20 minutos. Si quieres, trae un Excel con los pedidos de un día normal y te mostramos cómo quedarían las rutas.</p>
+        <form class="cta-final__form demo-form" id="cta-form" data-source="rutas-cta" novalidate>
+          <div class="contact-toggle" role="radiogroup" aria-label="Cómo prefieres que te contactemos">
+            <label class="contact-toggle__option">
+              <input type="radio" name="contactMethod" value="email" checked>
+              <span>✉ Correo</span>
+            </label>
+            <label class="contact-toggle__option">
+              <input type="radio" name="contactMethod" value="whatsapp">
+              <span>☎ WhatsApp</span>
+            </label>
+          </div>
+          <label class="visually-hidden" for="cta-email">Correo de trabajo</label>
+          <input class="field" type="email" id="cta-email" name="email" placeholder="tu correo de trabajo" autocomplete="email" required>
+          <label class="visually-hidden" for="cta-phone">Número de WhatsApp</label>
+          <input class="field is-hidden" type="tel" id="cta-phone" name="phone" placeholder="tu número de WhatsApp" autocomplete="tel">
+          <input type="text" name="empresa" class="field-trap" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <button class="btn btn--primary" type="submit">Solicitar demo</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__col">
+        <div class="footer__brand">
+          <span class="nav__wordmark">Copestyle <span>Rutas</span></span>
+        </div>
+        <p class="footer__desc">Ruteo, app del conductor y seguimiento por WhatsApp para distribuidoras con flota propia.</p>
+      </div>
+
+      <div class="footer__col">
+        <p class="footer__col-title">Producto</p>
+        <ul>
+          <li><a href="#como-funciona">Cómo funciona</a></li>
+          <li><a href="#despachador">Despachador</a></li>
+          <li><a href="#conductor">Conductor</a></li>
+          <li><a href="#cliente">Cliente</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <p class="footer__col-title">Copestyle</p>
+        <ul>
+          <li><a href="index.html">Copestyle Forms · Reportes de campo</a></li>
+          <li><a href="rutas.html">Copestyle Rutas · Logística</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <p class="footer__col-title">Legal</p>
+        <ul>
+          <li><a href="terminos-de-servicio.html">Términos de servicio</a></li>
+          <li><a href="politica-de-privacidad.html">Política de privacidad</a></li>
+          <li><a href="tratamiento-de-datos.html">Tratamiento de datos</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <span>© 2026 Copestyle. Todos los derechos reservados.</span>
+      <span>Hecho para quien entrega todos los días.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/interactions.js" defer></script>
+<script src="js/forms.js" defer></script>
+<script src="js/rutas.js" defer></script>
+</body>
+</html>

@@ -160,6 +160,7 @@
   animation-delay: 0.14s;
 }
 .reveal-stagger .feature-card:nth-child(3),
+.reveal-stagger .sector-card:nth-child(3),
 .reveal-stagger .template-item:nth-child(3),
 .reveal-stagger .testimonial-card:nth-child(3),
 .reveal-stagger .price-card:nth-child(3) {
@@ -176,6 +177,12 @@
 .reveal-stagger .feature-card:nth-child(6),
 .reveal-stagger .template-item:nth-child(6) {
   animation-delay: 0.5s;
+}
+.reveal-stagger .template-item:nth-child(7) {
+  animation-delay: 0.59s;
+}
+.reveal-stagger .template-item:nth-child(8) {
+  animation-delay: 0.68s;
 }
 
 .section__header::after {

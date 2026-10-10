@@ -1,0 +1,255 @@
+/* =========================================================
+   Copestyle Rutas — estilos propios (se apoya en los CSS de Forms)
+   ========================================================= */
+
+a.nav__wordmark { text-decoration: none; }
+
+.nav__product-link {
+  color: var(--electric) !important;
+}
+
+/* ---------- Hero ---------- */
+.rutas-hero__grid {
+  grid-template-columns: minmax(0, 560px) minmax(0, 1fr);
+}
+
+.rutas-hero__visual {
+  min-height: 460px;
+}
+
+.screen-frame {
+  margin: 0;
+  border: 1px solid var(--border-electric);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--surface-solid);
+  box-shadow: var(--shadow-card), var(--glow-sm);
+}
+
+.screen-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.screen-frame--hero {
+  width: 100%;
+  transform: perspective(1400px) rotateY(-8deg) rotateX(2deg);
+  transform-origin: left center;
+}
+
+.phone-frame {
+  margin: 0;
+  width: 100%;
+  max-width: 250px;
+  border-radius: 28px;
+  padding: 8px;
+  background: #0b111c;
+  border: 1px solid var(--border-strong);
+  box-shadow: var(--shadow-lift);
+}
+
+.phone-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+
+.phone-frame--float {
+  position: absolute;
+  right: -10px;
+  bottom: -40px;
+  max-width: 170px;
+}
+
+.phone-pair {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+}
+
+.phone-pair .phone-frame {
+  max-width: 230px;
+}
+
+.phone-frame--offset {
+  margin-top: 3rem;
+}
+
+/* ---------- Trío de piezas bajo el hero ---------- */
+.rutas-trio {
+  margin-top: 2.2rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.rutas-trio__item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  color: var(--ice-dim);
+  font-size: 0.9rem;
+}
+
+.rutas-trio__num {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  color: var(--electric);
+}
+
+/* ---------- Pasos ---------- */
+.rutas-steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.rutas-step {
+  padding: 2rem;
+}
+
+.rutas-step__num {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  color: var(--electric);
+  text-shadow: var(--glow-sm);
+}
+
+.rutas-step__title {
+  margin-top: 0.8rem;
+  font-size: 1.25rem;
+}
+
+.rutas-step__desc {
+  margin-top: 0.7rem;
+  color: var(--silver);
+}
+
+/* ---------- Tabs del despachador ---------- */
+.rutas-tabs {
+  margin-bottom: 3rem;
+}
+
+.rutas-tabs__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.rutas-tabs__tab {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--silver);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.65rem 1.1rem;
+  min-height: 44px;
+  cursor: pointer;
+  transition: color var(--dur-fast), border-color var(--dur-fast), background var(--dur-fast);
+}
+
+.rutas-tabs__tab:hover {
+  color: var(--ice);
+  border-color: var(--border-electric);
+}
+
+.rutas-tabs__tab.is-active {
+  color: var(--void);
+  background: var(--electric);
+  border-color: var(--electric);
+}
+
+.rutas-tabs__tab:focus-visible {
+  outline: 2px solid var(--electric-bright);
+  outline-offset: 2px;
+}
+
+.rutas-note {
+  margin-top: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  color: var(--steel);
+}
+
+/* ---------- Chips "para quién" ---------- */
+.rutas-chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.rutas-chips span {
+  padding: 0.7rem 1.2rem;
+  border: 1px solid var(--border-electric);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--ice-dim);
+  font-size: 0.95rem;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1100px) {
+  .rutas-hero__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .rutas-hero__visual {
+    display: flex;
+    min-height: 0;
+    margin-top: 1rem;
+  }
+  .screen-frame--hero {
+    transform: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .rutas-hero__visual {
+    display: flex !important;
+  }
+  .phone-frame--float {
+    display: none;
+  }
+  .rutas-steps {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  #conductor .split__visual,
+  #cliente .split__visual {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .rutas-trio {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .phone-pair .phone-frame {
+    max-width: 48%;
+  }
+  .phone-frame--offset {
+    margin-top: 1.5rem;
+  }
+  .phone-frame {
+    border-radius: 20px;
+    padding: 5px;
+  }
+  .phone-frame img {
+    border-radius: 15px;
+  }
+}
